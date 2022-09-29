@@ -1,42 +1,48 @@
 import * as React from "react"
-import type { HeadFC } from "gatsby"
 
-const a = {
-  // background: 'blue',
-}
 const b = {
   fill: 'red',
 }
 const c = {
-  fill: 'blue',
-  width: '1px',
+  fill: 'green',
+  width: 15,
+  height: 15
+}
+const d = {
+  fill: 'yellow',
 }
 const container = {
-  margin: '112px',
-  background: 'green',
+  margin: '50px',
+  background: 'rgba(255, 255, 55, 0.5)',
 }
 const A = ({ x, y }: any) => (
-  <rect x={x} y={y} height="10%" style={c} />
+  <rect x={x} y={y} style={c} />
 )
-
-const B = (props) => (
+const B = ({ x, y, radius }: any) => (
   <circle fill="#F7941E" stroke="#231F20" stroke-width="1"
-    cx="50%" cy="40%" r="10%" opacity="0.6" />
+    cx={x} cy={y} r="5" opacity="0.6" />
 )
-// responsive
-// SVG tags inline
-// viewBox defined, no width or height attributes
-// child elements defined with percentages
 const IndexPage = () => {
   return (
-    <main style={a}>
+    <main>
       <div style={container}>
         <svg version="1.1" viewBox="0 0 100 100">
-          {[...Array(6)].map((v, i) => (<A x={Math.sin(i * 10)} y="10" />))}
-          <B />
-          {/* <rect x="0" y="0" width="100%" height="100%" style={b} /> */}
-          {/* <circle fill="#F7941E" stroke="#231F20" stroke-width="1"
-            cx="50%" cy="40%" r="10%" opacity="0.6" /> */}
+          <A x="0" y="0" />
+          <svg x="10%" y="10%" width="90%" height="90%" >
+            <rect x="0" y="0" width="90%" height="100%" fill="red" />
+            {[...Array(12)].map((v, i) => {
+              const radius = 35
+              const inc = 30
+              const circleStart = 195
+              const circlePlacement = circleStart + i * inc
+              const offsetX = 40
+              const offsetY = 40
+              const x = Math.cos(circlePlacement * (Math.PI / 180)) * radius + offsetX
+              const y = Math.sin(circlePlacement * (Math.PI / 180)) * radius + offsetY
+
+              return (<B x={x} y={y} radius={radius} />)
+            })}
+          </svg>
         </svg>
       </div>
 
@@ -45,5 +51,3 @@ const IndexPage = () => {
 }
 
 export default IndexPage
-
-export const Head: HeadFC = () => <title>Home Page</title>
