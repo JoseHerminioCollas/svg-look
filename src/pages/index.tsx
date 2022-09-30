@@ -20,8 +20,9 @@ const A = ({ x, y }: any) => (
 )
 const B = ({ x, y, radius }: any) => (
   <circle fill="#F7941E" stroke="#231F20" stroke-width="1"
-    cx={x} cy={y} r="5" opacity="0.6" />
+    cx={x} cy={y} r={radius} opacity="0.6" />
 )
+const circleCount =  6
 const IndexPage = () => {
   return (
     <main>
@@ -30,17 +31,18 @@ const IndexPage = () => {
           <A x="0" y="0" />
           <svg x="10%" y="10%" width="90%" height="90%" >
             <rect x="0" y="0" width="90%" height="100%" fill="red" />
-            {[...Array(12)].map((v, i) => {
-              const radius = 35
+            {[...Array(circleCount)].map((v, i) => {
+              const circleGroupRadius = 35
+              const circleRadius = "5%"
               const inc = 30
-              const circleStart = 195
+              const circleStart = 190
               const circlePlacement = circleStart + i * inc
               const offsetX = 40
               const offsetY = 40
-              const x = Math.cos(circlePlacement * (Math.PI / 180)) * radius + offsetX
-              const y = Math.sin(circlePlacement * (Math.PI / 180)) * radius + offsetY
+              const x = Math.cos(circlePlacement * (Math.PI / 180)) * circleGroupRadius + offsetX
+              const y = Math.sin(circlePlacement * (Math.PI / 180)) * circleGroupRadius + offsetY
 
-              return (<B x={x} y={y} radius={radius} />)
+              return (<B x={x} y={y} radius={circleRadius} />)
             })}
           </svg>
         </svg>
