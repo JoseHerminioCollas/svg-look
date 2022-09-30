@@ -1,0 +1,57 @@
+/* svg rect {
+    background-color: blue;
+}
+svg {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+  } */
+  
+  @keyframes fadeIn {
+    from {
+        /* transform: rotate(0deg) */
+        transform: scale(1.5);
+    }
+    to {
+        /* transform: rotate(30deg) */
+        transform: scale(1);
+    }
+  }
+  svg {
+    /* width: 100px;
+    height: 100px; */
+    background-color: gainsboro;
+    animation-name: fadeIn;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+}
+  /* svg {
+    /* animation: fadeIn 10s ease-in infinite alternate; */
+    /* animation: fadeIn 11s ease 0s 11 normal forwards; */
+    /* animation: fadeIn 3s ease-in 1s 2 reverse both paused slidein; */
+    /* animation-duration: 77s; */
+   
+  /* } */
+    
+  .box {
+    background-color: rebeccapurple;
+    border-radius: 10px;
+    width: 100px;
+    height: 100px;
+    animation-name: rotate;
+    animation-duration: 0.7s;
+    animation-iteration-count: infinite;
+    animation-play-state: paused;
+  }
+  .box:hover {
+    animation-play-state: running;
+  }
+  
+  @keyframes rotate {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
