@@ -4,7 +4,6 @@ import C from './C'
 
 const container = {
     margin: '50px',
-    background: 'rgba(255, 255, 55, 0.5)',
   }
   
   const c = {

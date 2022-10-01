@@ -1,26 +1,26 @@
 import * as React from "react"
 import B from './B'
 
-const C = () => {
-  const circleCount = 1
+const circleCount = 8
+const diskRadius = 3
+const groupRadius = 25
+const inc = 23
+const circleStart = 190
+const offsetX = 45
+const offsetY = 45
 
-  return (<svg x="10%" y="10%" width="90%" height="90%" >
-    <rect x="0" y="0" width="90%" height="100%" fill="red" />
+const C = () => {
+
+  return (<svg x="0%" y="10%" width="90%" height="90%" >
     {[...Array(circleCount)].map((v, i) => {
-      const radius = 15
-      const inc = 30
-      const circleStart = 190
       const circlePlacement = circleStart + i * inc
-      const offsetX = 40
-      const offsetY = 40
-      const x = Math.cos(circlePlacement * (Math.PI / 180)) * radius + offsetX
-      const y = Math.sin(circlePlacement * (Math.PI / 180)) * radius + offsetY
+      const x = Math.cos(circlePlacement * (Math.PI / 180)) * groupRadius + offsetX
+      const y = Math.sin(circlePlacement * (Math.PI / 180)) * groupRadius + offsetY
 
       return (
         <>
-          <B x={x} y={y} radius={2} />
-          <circle fill="#F7941E" stroke="#231F20" stroke-width="1"
-            cx={x} cy={y} r={radius} opacity="0.6" />
+          <B x={x} y={y} radius={diskRadius} />
+          <circle fill="blue" cx="45" cy="45" r="22" opacity="0.2" id="c" />
         </>
       )
     })}
