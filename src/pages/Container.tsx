@@ -21,7 +21,7 @@ const Container = () => {
     return (
         <div style={container}>
             <svg xmlns="http://www.w3.org/2000/svg" width="320" height="320">
-                <path d="M  0 315
+                <path d="M  10 315
            L 110 215
            A 36 60 0 0 1 150.71 170.29
            L 172.55 152.45
