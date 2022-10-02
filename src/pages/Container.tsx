@@ -18,6 +18,9 @@ const p = {
 const q = {
     fill: "green", strokeWidth: "2", stroke: "black"
 }
+const r = {
+    fill: "none", strokeWidth: "32", stroke: "black"
+}
 const t = -42
 // l 0  -45 Z" "
 // L 125 80 Z" 
@@ -35,11 +38,9 @@ const Container = () => {
                 <circle cx="125" cy="80" r="2" fill="red" />
                 <circle cx="125" cy="125" r="2" fill="blue" />
 
-                <path d="M 10 300
+                <path d="M  30 300
             A 60 60 0 0 1 200 300
-           L 200 300 Z"
-
-                    stroke="black" fill="green" stroke-width="2" fill-opacity="0.5" />
+           L 200 300  " style={r}  />
                 <circle cx="150.71" cy="170.29" r="2" fill="red" />
                 <circle cx="110" cy="215" r="2" fill="red" />
                 <ellipse cx="144.931" cy="229.512" rx="36" ry="60" fill="transparent" stroke="blue" />
