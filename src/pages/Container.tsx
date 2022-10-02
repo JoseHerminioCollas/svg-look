@@ -15,7 +15,12 @@ const d = {
 const p = {
     fill: "blue", stroke: "black", strokeWidth: "1",
 }
+const q = {
+    fill: "green", strokeWidth: "2", stroke: "black"
+}
 const t = -42
+// l 0  -45 Z" "
+// L 125 80 Z" 
 const Container = () => {
     const d = `M10,50   c0,${t}   70,${t}   70,0 s10,10 10,10`
     return (
@@ -23,7 +28,8 @@ const Container = () => {
             <svg xmlns="http://www.w3.org/2000/svg" width="320" height="320">
                 <path d="M 80 80
                     A 45 45, 0, 0, 0, 125 125
-                    L 125 80 Z" fill="green" stroke-width="2" stroke="black"
+                    L 125 80   Z"
+                    style={q}
                 />
                 <circle cx="80" cy="80" r="2" fill="yellow" />
                 <circle cx="125" cy="80" r="2" fill="red" />
