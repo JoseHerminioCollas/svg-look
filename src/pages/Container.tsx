@@ -25,7 +25,7 @@ const Container = () => {
     const d = `M10,50   c0,${t}   70,${t}   70,0 s10,10 10,10`
     return (
         <div style={container}>
-            <svg xmlns="http://www.w3.org/2000/svg" width="320" height="320">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
                 <path d="M 80 80
                     A 45 45, 0, 0, 0, 125 125
                     L 125 80   Z"
