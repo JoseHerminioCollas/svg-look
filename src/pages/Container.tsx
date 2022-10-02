@@ -4,29 +4,56 @@ import C from './C'
 
 const container = {
     margin: '50px',
-  }
-  
-  const c = {
-    fill: 'green',
-    width: 15,
-    height: 15
-  }
-  const d = {
-    fill: "rgba(255, 155, 155, 0.5)", 
-  }
+}
+
+const c = {
+    fill: 'red',
+}
+const d = {
+    fill: "rgba(255, 155, 155, 0.5)",
+}
+const p = {
+    fill: "blue", stroke: "black", strokeWidth: "1",
+}
 const t = -42
 const Container = () => {
     const d = `M10,50   c0,${t}   70,${t}   70,0 s10,10 10,10`
     return (
-      <div style={container}>
-        <svg version="1.1" viewBox="0 0 100 100">
-            <path d={d} style={c} />
-          <A x="0" y="0" style={c} />
-          <C />
-
-        </svg>
-      </div>
+        <div style={container}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="320" height="320">
+                <path d="M  0 315
+           L 110 215
+           A 36 60 0 0 1 150.71 170.29
+           L 172.55 152.45
+           A 30 50 -45 0 1 215.1 109.9
+           L 315 10" 
+           
+           stroke="black" fill="green" stroke-width="2" fill-opacity="0.5" />
+                <circle cx="150.71" cy="170.29" r="2" fill="red" />
+                <circle cx="110" cy="215" r="2" fill="red" />
+                <ellipse cx="144.931" cy="229.512" rx="36" ry="60" fill="transparent" stroke="blue" />
+                <ellipse cx="115.779" cy="155.778" rx="36" ry="60" fill="transparent" stroke="blue" />
+            </svg>
+            <svg version="1.1" viewBox="0 0 100 100">
+                <path d="M 10 0
+           L 110 215
+           A 30 50 0 0 1 162.55 162.45
+           L 172.55 152.45
+           A 30 50 -45 0 1 215.1 109.9
+           L 15 10"
+                    stroke="black"
+                    fill="green"
+                    stroke-width="2"
+                    fill-opacity="0.5" />
+                <path d={d} style={c} />
+                <A x="0" y="0" style={c} />
+                <C />
+                {/* radius radius rotation */}
+                <path id="arc" d="M50 10 a 20 20 60 1 0 50 10" style={p} />
+                <path id="arc" d="M50 50 a 10 10 0 1 0 20 20" style={p} />
+            </svg>
+        </div>
     )
-  }
-  
-  export default Container
+}
+
+export default Container

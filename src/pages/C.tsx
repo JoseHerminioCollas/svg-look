@@ -10,7 +10,9 @@ const offsetX = 45
 const offsetY = 45
 
 const C = () => {
-
+  const RADIANS = Math.PI/180;
+  const {cos, sin, sqrt} = Math;
+  
   return (<svg x="0%" y="10%" width="90%" height="90%" >
     {[...Array(circleCount)].map((v, i) => {
       const circlePlacement = circleStart + i * inc

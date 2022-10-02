@@ -8,9 +8,8 @@
   }
   svg #c{
     transform-origin: center center;
-
     background-color: gainsboro;
-    animation-name: fadeIn;
+    /* animation-name: fadeIn; */
     animation-duration: 3s;
     animation-fill-mode: forwards;
 }
