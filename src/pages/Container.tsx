@@ -35,12 +35,9 @@ const Container = () => {
                 <circle cx="125" cy="80" r="2" fill="red" />
                 <circle cx="125" cy="125" r="2" fill="blue" />
 
-                <path d="M  10 315
-           L 110 215
-           A 36 60 0 0 1 150.71 170.29
-           L 172.55 152.45
-           A 30 50 -45 0 1 215.1 109.9
-           L 315 10"
+                <path d="M 10 300
+            A 60 60 0 0 1 200 300
+           L 200 300 Z"
 
                     stroke="black" fill="green" stroke-width="2" fill-opacity="0.5" />
                 <circle cx="150.71" cy="170.29" r="2" fill="red" />
