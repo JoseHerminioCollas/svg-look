@@ -4,7 +4,8 @@ import Container from './Container'
 import './a.css'
 
 const mainStyle = {
-  background: 'gray'
+  background: 'gray',
+  maxWidth: 700,
 }
 
 const IndexPage = () => {

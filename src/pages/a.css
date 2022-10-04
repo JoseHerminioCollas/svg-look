@@ -1,3 +1,6 @@
+  body {
+    margin: 0;
+  }
   @keyframes fadeIn {
     from {
         transform: scale(1.5);
