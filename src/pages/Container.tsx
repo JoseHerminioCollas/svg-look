@@ -18,7 +18,7 @@ const q = {
     fill: "green", strokeWidth: "2", stroke: "black"
 }
 const r = {
-    fill: "none", strokeWidth: "32", stroke: "black"
+    fill: "none", strokeWidth: "32", stroke: "gray"
 }
 const bg = {
     fill: 'red',
@@ -45,9 +45,10 @@ const Container = () => {
                 <circle cx="125" cy="80" r="2" fill="red" />
                 <circle cx="125" cy="125" r="2" fill="blue" /> */}
                 {/* arc */}
-                <path d="M  30 100
-            A 60 60 0 0 1 200 100
-           L 200 100  " style={r} />
+                <path d="M  50 150
+                    A 60 60 0 0 1 250 150
+                    L 250 150"
+                    style={r} />
                 {/* <circle cx="150.71" cy="170.29" r="2" fill="red" />
                 <circle cx="110" cy="215" r="2" fill="red" />
                 <ellipse cx="144.931" cy="229.512" rx="36" ry="60" fill="transparent" stroke="blue" />
