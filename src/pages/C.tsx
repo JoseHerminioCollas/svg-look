@@ -2,18 +2,18 @@ import * as React from "react"
 import B from './B'
 
 const circleCount = 10
-const diskRadius = 16
-const groupRadius = 140
+const diskRadius = 5
+const groupRadius = 130
 const inc = 20
 const circleStart =  180
-const offsetX = 150
-const offsetY = 160
+const offsetX = 0
+const offsetY = 0
 
 const C = () => {
   const RADIANS = Math.PI/180;
   const {cos, sin, sqrt} = Math;
   
-  return (<svg x="0" y="0" width="100%" height="100%" >
+  return (<  >
     {[...Array(circleCount)].map((v, i) => {
       const circlePlacement = circleStart + i * inc
       const x = Math.cos(circlePlacement * (Math.PI / 180)) * groupRadius + offsetX
@@ -26,7 +26,7 @@ const C = () => {
         </>
       )
     })}
-  </svg>)
+  </ >)
 }
 
 export default C

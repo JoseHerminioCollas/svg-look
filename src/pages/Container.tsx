@@ -22,6 +22,10 @@ const q = {
 const r = {
     fill: "none", strokeWidth: "30", stroke: "gray"
 }
+const arc = {
+    fill: "none", strokeWidth: "30", stroke: "gray"
+}
+
 const bg = {
     fill: 'red',
     x: 0,
@@ -35,34 +39,35 @@ const rad = -60
 const cSize = 90
 const x = cos(rad * RD) * cSize
 const y = sin(rad * RD) * cSize
-
 const t = -42
-// {x} {y}
+
 const Container = () => {
     const d = `M10,50   c0,${t}   70,${t}   70,0 s10,10 10,10`
     return (
         <div style={container}>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200">
                 <rect style={{ ...bg }} />
-                {/* arc */}
-                <path id="abc" d="M 50 160
-                    A 55 55 0 0 1 250 160"
-                    style={r} />
-                <text dy="3">
-                    <textPath alignment-baseline="top" xlinkHref="#abc" startOffset="23%">
-                        Lorum Ipsum Dolor Sit
-                    </textPath>
-                </text>
-                <C />
-                <g style={{ transform: 'translate(150px, 200px)', fill: 'none' }}>
+                {/* move the group to the middle of the area, calculate based on 0, 0 in middle
+                    change origin of coords to middle
+                */}
+                <g style={{ transform: 'translate( 50%, 85%)', fill: 'none' }}>
                     {/* <rect style={{ ...bg, width: 200, height: 100 }} /> */}
+                    {/* arc */}
+                    <path id="abc" d="M -100 0
+                    A 100 100 0 0 1 100  0"
+                        style={arc} />
+                    <text dy="3" style={{ fill: 'black' }}>
+                        <textPath alignment-baseline="top" xlinkHref="#abc" startOffset="23%">
+                            Lorum Ipsum Dolor Sit
+                        </textPath>
+                    </text>
+                    <C />
                     <path d={`M 0 0 
                     L 90 0 
                     A 100 100, 0, 0, 0, ${x} ${y} Z`}
                         style={p}
                     />
                 </g>
-                <circle cx={x} cy={y} r="10" fill="purple" />
             </svg>
         </div>
     )
