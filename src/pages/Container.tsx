@@ -45,8 +45,8 @@ const Container = () => {
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200">
                 <rect style={{ ...bg }} />
                 {/* arc */}
-                <path id="abc" d="M 50 200
-                    A 55 55 0 0 1 250 200"
+                <path id="abc" d="M 50 160
+                    A 55 55 0 0 1 250 160"
                     style={r} />
                 <text dy="3">
                     <textPath alignment-baseline="top" xlinkHref="#abc" startOffset="23%">
@@ -54,8 +54,8 @@ const Container = () => {
                     </textPath>
                 </text>
                 <C />
-                <g style={{ transform: 'translate(150px, 200px)' }}>
-                    <rect style={{ ...bg, width: 200, height: 100 }} />
+                <g style={{ transform: 'translate(150px, 200px)', fill: 'none' }}>
+                    {/* <rect style={{ ...bg, width: 200, height: 100 }} /> */}
                     <path d={`M 0 0 
                     L 90 0 
                     A 100 100, 0, 0, 0, ${x} ${y} Z`}
