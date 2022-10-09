@@ -3,11 +3,11 @@ import B from './B'
 
 const circleCount = 10
 const diskRadius = 16
-const groupRadius = 32
-const inc = 23
-const circleStart =  45
-const offsetX = 143
-const offsetY = 135
+const groupRadius = 140
+const inc = 20
+const circleStart =  180
+const offsetX = 150
+const offsetY = 160
 
 const C = () => {
   const RADIANS = Math.PI/180;

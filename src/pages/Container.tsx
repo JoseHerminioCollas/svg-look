@@ -19,9 +19,9 @@ const p = {
 const q = {
     fill: "green", strokeWidth: "2", stroke: "black"
 }
-// const r = {
-//     fill: "none", strokeWidth: "32", stroke: "gray"
-// }
+const r = {
+    fill: "none", strokeWidth: "30", stroke: "gray"
+}
 const bg = {
     fill: 'red',
     x: 0,
@@ -32,7 +32,7 @@ const bg = {
 const RD = Math.PI / 180;
 const { cos, sin } = Math;
 const rad = -60
-const cSize = 100
+const cSize = 90
 const x = cos(rad * RD) * cSize
 const y = sin(rad * RD) * cSize
 
@@ -43,19 +43,27 @@ const Container = () => {
     return (
         <div style={container}>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200">
-                <A x="0" y="0" style={c} />
+                <rect style={{ ...bg }} />
+                {/* arc */}
+                <path id="abc" d="M 50 200
+                    A 55 55 0 0 1 250 200"
+                    style={r} />
+                <text dy="3">
+                    <textPath alignment-baseline="top" xlinkHref="#abc" startOffset="23%">
+                        Lorum Ipsum Dolor Sit
+                    </textPath>
+                </text>
                 <C />
                 <g style={{ transform: 'translate(150px, 200px)' }}>
                     <rect style={{ ...bg, width: 200, height: 100 }} />
                     <path d={`M 0 0 
-                    L 100 0 
-                    A 85 85, 0, 0, 0, ${x} ${y}  Z`}
+                    L 90 0 
+                    A 100 100, 0, 0, 0, ${x} ${y} Z`}
                         style={p}
                     />
-                </g>3
+                </g>
                 <circle cx={x} cy={y} r="10" fill="purple" />
             </svg>
-            <D />
         </div>
     )
 }
