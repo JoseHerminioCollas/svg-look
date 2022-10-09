@@ -13,8 +13,9 @@ const c = {
 const d = {
     fill: "rgba(255, 155, 155, 0.5)",
 }
-const p = {
-    fill: "blue", stroke: "black", strokeWidth: "5",
+const wedge = {
+    fill: "blue", stroke: "black", strokeWidth: "2",
+    transform: 'rotate(-0deg)'
 }
 const q = {
     fill: "green", strokeWidth: "2", stroke: "black"
@@ -50,7 +51,10 @@ const Container = () => {
                 {/* move the group to the middle of the area, calculate based on 0, 0 in middle
                     change origin of coords to middle
                 */}
-                <g style={{ transform: 'translate( 50%, 85%)', fill: 'none' }}>
+                <g style={{
+                    transform: 'translate( 50%, 85%)',
+                    fill: 'none'
+                }}>
                     {/* <rect style={{ ...bg, width: 200, height: 100 }} /> */}
                     {/* arc */}
                     <path id="abc" d="M -100 0
@@ -65,8 +69,34 @@ const Container = () => {
                     <path d={`M 0 0 
                     L 90 0 
                     A 100 100, 0, 0, 0, ${x} ${y} Z`}
-                        style={p}
+                        style={{ ...wedge, fill: 'green' }}
                     />
+                    <path d={`M 0 0 
+                    L 90 0 
+                    A 100 100, 0, 0, 0, ${x} ${y} Z`}
+                        style={{ ...wedge, transform: 'rotate(-60deg)' }}
+                    />
+                    <path d={`M 0 0 
+                    L 90 0 
+                    A 100 100, 0, 0, 0, ${x} ${y} Z`}
+                        style={{ ...wedge, transform: 'rotate(-120deg)' }}
+                    />
+                    {/* place text! */}
+                    {[1, 2, 3].map((e, i) => {
+                        const rad = 210 +  i * 60
+                        const cSize = 60
+                        const x = cos(rad * RD) * cSize
+                        const y = sin(rad * RD) * cSize
+                        return (<circle cx={x} cy={y} r="10"
+                            fill="purple"
+                        ></circle>)
+                    })}
+                    <text y="0" x="0" style={{ fill: 'black' }}>
+                        ABC
+                        <textPath alignment-baseline="top"  >
+                            AAAAAAAAAAAAAA
+                        </textPath>
+                    </text>
                 </g>
             </svg>
         </div>
