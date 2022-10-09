@@ -1,11 +1,11 @@
 import * as React from "react"
 import B from './B'
 
-const circleCount = 8
+const circleCount = 10
 const diskRadius = 16
-const groupRadius = 120
+const groupRadius = 32
 const inc = 23
-const circleStart = 190
+const circleStart =  45
 const offsetX = 143
 const offsetY = 135
 
@@ -21,8 +21,8 @@ const C = () => {
 
       return (
         <>
-          <B x={x} y={y} radius={diskRadius} />
-          <circle fill="blue" cx="50%" cy="70%" r="40" opacity="1" id="c" />
+          <circle cx={x} cy={y} r={diskRadius} fill="green" stroke="black" strokeWidth="3" />
+          {/* <circle fill="blue" cx="50%" cy="70%" r="40" opacity="1" id="c" /> */}
         </>
       )
     })}
