@@ -82,21 +82,23 @@ const Container = () => {
                         style={{ ...wedge, transform: 'rotate(-120deg)' }}
                     />
                     {/* place text! */}
-                    {[1, 2, 3].map((e, i) => {
-                        const rad = 210 +  i * 60
+                    {['A', 'B', 'C'].map((label, i) => {
+                        const rad = 210 + i * 60
                         const cSize = 60
                         const x = cos(rad * RD) * cSize
                         const y = sin(rad * RD) * cSize
-                        return (<circle cx={x} cy={y} r="10"
-                            fill="purple"
-                        ></circle>)
+                        return (
+                            <>
+                                <circle cx={x} cy={y} r="10"
+                                    fill="purple"
+                                ></circle>
+                                <text
+                                    dominant-baseline="middle" text-anchor="middle"
+                                    x={x} y={y} style={{ fill: 'black' }}>
+                                    {label}
+                                </text>
+                            </>)
                     })}
-                    <text y="0" x="0" style={{ fill: 'black' }}>
-                        ABC
-                        <textPath alignment-baseline="top"  >
-                            AAAAAAAAAAAAAA
-                        </textPath>
-                    </text>
                 </g>
             </svg>
         </div>
