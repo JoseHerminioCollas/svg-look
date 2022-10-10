@@ -25,7 +25,22 @@ const Container = () => {
           transform: 'translate( 50%, 85%)',
           fill: 'none'
         }}>
-          <A />
+          <A
+            text="abc"
+            radius={100}
+            color="gray"
+            textColor="blue"
+            idName="a"
+            startOffset=""
+          />
+          <A
+            text="def"
+            radius={130}
+            color="blue"
+            textColor="red"
+            idName="b"
+            startOffset=""
+          />
           <C />
           <W />
         </g>
