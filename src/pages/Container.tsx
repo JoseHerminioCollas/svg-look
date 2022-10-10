@@ -2,31 +2,14 @@ import * as React from "react"
 import A from './A'
 import C from './C'
 import D from './D'
+import W from './W'
 
 const container = {
-  // margin: '50px',
   position: 'relative'
-}
-const c = {
-  fill: 'red',
-}
-const d = {
-  fill: "rgba(255, 155, 155, 0.5)",
-}
-const wedge = {
-  fill: "blue", stroke: "black", strokeWidth: "2",
-  transform: 'rotate(-0deg)'
-}
-const q = {
-  fill: "green", strokeWidth: "2", stroke: "black"
-}
-const r = {
-  fill: "none", strokeWidth: "30", stroke: "gray"
 }
 const arc = {
   fill: "none", strokeWidth: "30", stroke: "gray"
 }
-
 const bg = {
   fill: 'red',
   x: 0,
@@ -34,56 +17,9 @@ const bg = {
   width: '100%',
   height: '100%',
 }
-const RD = Math.PI / 180;
-const { cos, sin } = Math;
-const rad = -60
-const cSize = 90
-const x = cos(rad * RD) * cSize
-const y = sin(rad * RD) * cSize
-const t = -42
 
-const W = () => {
-  return (
-    <>
-      {[
-        { label: 'A', fill: 'green' },
-        { label: 'B', fill: 'blue' },
-        { label: 'C', fill: 'red' }
-      ].map((e, i) => {
-        const rad = 210 + i * 60
-        const cSize = 60
-        const x = cos(rad * RD) * cSize
-        const y = sin(rad * RD) * cSize
-
-        // wedge corner
-        const rad2 = -60
-        const cSize2 = 90
-        const x2 = cos(rad2 * RD) * cSize2
-        const y2 = sin(rad2 * RD) * cSize2
-
-        return (
-          <>
-            <path d={`M 0 0 
-                                    L 90 0 
-                                    A 100 100, 0, 0, 0, ${x2} ${y2} Z`}
-              style={{
-                ...wedge, fill: e.fill,
-                transform: `rotate(${240 + i * 60}deg)`
-              }}
-            />
-            <text
-              dominant-baseline="middle" text-anchor="middle"
-              x={x} y={y} style={{ fill: 'black' }}>
-              {e.label}
-            </text>
-          </>)
-      })}
-
-    </>
-  )
-}
 const Container = () => {
-  const d = `M10,50   c0,${t}   70,${t}   70,0 s10,10 10,10`
+
   return (
     <div style={container}>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200">
