@@ -66,7 +66,10 @@ const Container = () => {
                         </textPath>
                     </text>
                     <C />
-                    <path d={`M 0 0 
+                    {/* CircleGroup */}
+                    {/* Arc */}
+                    {/* Wedge */}
+                    {/* <path d={`M 0 0 
                     L 90 0 
                     A 100 100, 0, 0, 0, ${x} ${y} Z`}
                         style={{ ...wedge, fill: 'green' }}
@@ -80,15 +83,30 @@ const Container = () => {
                     L 90 0 
                     A 100 100, 0, 0, 0, ${x} ${y} Z`}
                         style={{ ...wedge, transform: 'rotate(-120deg)' }}
-                    />
+                    /> */}
                     {/* place text! */}
                     {['A', 'B', 'C'].map((label, i) => {
                         const rad = 210 + i * 60
                         const cSize = 60
                         const x = cos(rad * RD) * cSize
                         const y = sin(rad * RD) * cSize
+
+                        // wedge corner
+                        const rad2 = -60
+                        const cSize2 = 90
+                        const x2 = cos(rad2 * RD) * cSize2
+                        const y2 = sin(rad2 * RD) * cSize2
+                        
                         return (
                             <>
+                                <path d={`M 0 0 
+                                    L 90 0 
+                                    A 100 100, 0, 0, 0, ${x2} ${y2} Z`}
+                                    style={{
+                                        ...wedge, fill: 'green',
+                                        transform: `rotate(${240 + i * 60}deg)`
+                                    }}
+                                />
                                 <circle cx={x} cy={y} r="10"
                                     fill="purple"
                                 ></circle>
