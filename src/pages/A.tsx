@@ -6,30 +6,20 @@ const q = {
 const r = {
   fill: "none", strokeWidth: "32", stroke: "gray"
 }
-
-const A = ({ x, y, style }: any) => (
+const arc = {
+  fill: "none", strokeWidth: "30", stroke: "gray"
+}
+// text, radius color textColor idName startOffset
+const A = ({ x, y, style, }: any) => (
   <>
-    {/* wedge */}
-    <path d="M 80 80
-                    A 45 45, 0, 0, 0, 125 125
-                    L 125 80   Z"
-      style={q}
-    />
-    <path d="M  25 5 
-                    A 45 45, 0, 0, 1, 75 55
-                    L 25 55   Z"
-      style={q}
-    />
-    {/* arc */}
-    <path id="abc" d="M  50 150
-                    A 60 60 0 0 1 250 150"
-      style={r} />
-    <text dy="3">
+    <path id="abc" d="M -100 0
+                    A 100 100 0 0 1 100  0"
+      style={arc} />
+    <text dy="3" style={{ fill: 'black' }}>
       <textPath alignment-baseline="top" xlinkHref="#abc" startOffset="23%">
-        Dangerous Curves Ahead
+        Lorum Ipsum Dolor Sit
       </textPath>
     </text>
-
   </>
 )
 
