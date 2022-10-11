@@ -20,7 +20,7 @@ const Container = () => {
   return (
     <div style={container}>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200"
-        style={{overflow: 'visible'}}
+        style={{ overflow: 'visible' }}
       >
         <rect style={{ ...bg }} />
         <g style={{
@@ -43,8 +43,17 @@ const Container = () => {
             idName="b"
             startOffset=""
           />
-          <C groupRadius={100} />
-          <C groupRadius={150} />
+          <C
+            data={[{ text: 'A' }]}
+            groupRadius={100} />
+          <C
+            data={[
+              { text: 'A' },
+              { text: 'B' },
+              { text: 'C' },
+              { text: 'D' },
+            ]}
+            groupRadius={150} />
           <W />
         </g>
         <circle fill="blue" cx="50%" cy="85%" r="40" opacity="1" id="c" />
