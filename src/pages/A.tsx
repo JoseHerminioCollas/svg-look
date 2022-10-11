@@ -1,7 +1,7 @@
 import * as React from "react"
 
 const arc = {
-  fill: "none", strokeWidth: "30",
+  fill: "none", strokeWidth: "40",
 }
 
 const A = ({ text, radius, color, textColor, idName, startOffset = '25%' }: any) => (

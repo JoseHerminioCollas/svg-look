@@ -5,7 +5,7 @@ const { cos, sin } = Math;
 
 // wedge corner
 const wedgeCornerDeg = -60
-const wedgeRadius = 90
+const wedgeRadius = 175
 const wX = cos(wedgeCornerDeg * RD) * wedgeRadius
 const wY = sin(wedgeCornerDeg * RD) * wedgeRadius
 
@@ -17,7 +17,7 @@ const W = ({ onClick }: any) => {
 
   const action = (id: any) => {
     states2.forEach((e: any) => (e[1](1)))
-    states2[id][1](1.1)
+    states2[id][1](1.05)
   }
 
   return (
@@ -30,7 +30,7 @@ const W = ({ onClick }: any) => {
         // text values
         const textStart = 210
         const textIncrement = 60
-        const textGroupRadius = 60
+        const textGroupRadius = 100
         const textDeg = textStart + i * textIncrement
         const tX = cos(textDeg * RD) * textGroupRadius
         const tY = sin(textDeg * RD) * textGroupRadius
@@ -38,8 +38,8 @@ const W = ({ onClick }: any) => {
         return (
           <>
             <path d={`M 0 0 
-              L 90 0 
-              A 100 100, 0, 0, 0, ${wX} ${wY} Z`}
+              L 175 0 
+              A 175 175, 0, 0, 0, ${wX} ${wY} Z`}
               style={{
                 fill: e.fill,
                 transform: `rotate(${240 + i * 60}deg) scale(${states2[i][0]})`

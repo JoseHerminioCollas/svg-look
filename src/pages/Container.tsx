@@ -32,17 +32,17 @@ const Container = () => {
   return (
     <>
       <div style={container}>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200"
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400"
           style={{ overflow: 'visible' }}
         >
           <rect style={{ ...bg }} />
           <g style={{
-            transform: 'translate( 50%, 85%)',
+            transform: 'translate( 50%, 90%)',
             fill: 'none'
           }}>
             <A
               text="abc"
-              radius={100}
+              radius={190}
               color="gray"
               textColor="blue"
               idName="a"
@@ -50,23 +50,27 @@ const Container = () => {
             />
             <A
               text="def"
-              radius={130}
+              radius={230}
               color="blue"
               textColor="red"
               idName="b"
               startOffset=""
             />
             <C
-              data={[{ text: 'A' }]}
-              groupRadius={100} />
-            <C
               data={[
                 { text: ['A', 'B'] },
                 { text: ['B', 'xxxx', 'aaaa'] },
                 { text: ['C'] },
                 { text: ['D'] },
+                { text: ['E'] },
+                { text: ['F'] },
+                { text: ['G'] },
+                { text: ['I'] },
+                { text: ['J'] },
+                { text: ['K'] },
+
               ]}
-              groupRadius={120} />
+              groupRadius={310} />
             <W onClick={wAction} />
           </g>
           <circle fill="blue" cx="50%" cy="85%" r="40" opacity="1" id="c" />

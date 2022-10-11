@@ -5,11 +5,11 @@ const { cos, sin } = Math
 
 const C = ({
   data = [],
-  groupRadius = 100,
+  groupRadius = 80,
   circleCount = 10,
-  diskRadius = 20,
-  placementInc = 20,
-  circleStart = 190,
+  diskRadius = 36,
+  placementInc = 18.25,
+  circleStart = 188.5,
 }: any) => {
 
   return (<>
@@ -25,7 +25,7 @@ const C = ({
           <text
             dominant-baseline="middle" text-anchor="middle"
             x={x} y={y}
-            style={{ fill: 'black', fontSize: '0.5em' }}
+            style={{ fill: 'black', fontSize: '1.1em' }}
           >
             {v.text.length === 1 &&
               <>
@@ -35,14 +35,14 @@ const C = ({
             {v.text.length === 2 &&
               <>
                 <tspan x={x} dy="-1em">{v.text[0]}</tspan>
-                <tspan x={x} dy="1.2em">{v.text[1]}</tspan>
+                <tspan x={x} dy="1.1em">{v.text[1]}</tspan>
               </>
             }
             {v.text.length === 3 &&
               <>
                 <tspan x={x} dy="-1em">{v.text[0]}</tspan>
-                <tspan x={x} dy="1.2em">{v.text[1]}</tspan>
-                <tspan x={x} dy="1.2em">{v.text[2]}</tspan>
+                <tspan x={x} dy="1.1em">{v.text[1]}</tspan>
+                <tspan x={x} dy="1.1em">{v.text[2]}</tspan>
               </>
             }
           </text>
