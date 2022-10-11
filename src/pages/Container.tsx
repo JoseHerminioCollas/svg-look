@@ -19,7 +19,9 @@ const Container = () => {
 
   return (
     <div style={container}>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200"
+        style={{overflow: 'visible'}}
+      >
         <rect style={{ ...bg }} />
         <g style={{
           transform: 'translate( 50%, 85%)',
@@ -41,9 +43,11 @@ const Container = () => {
             idName="b"
             startOffset=""
           />
-          <C />
+          <C groupRadius={100} />
+          <C groupRadius={150} />
           <W />
         </g>
+        <circle fill="blue" cx="50%" cy="85%" r="40" opacity="1" id="c" />
       </svg>
     </div>
   )
