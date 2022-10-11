@@ -22,14 +22,13 @@ const W = () => {
         { label: 'B', fill: 'blue' },
         { label: 'C', fill: 'red' }
       ].map((e, i) => {
-        // textStart = 210
-        // textIncrement = 60
-        // textGroupRadius = 60
-        const rad = 210 + i * 60
-        const cSize = 60
-        // textX
-        const x = cos(rad * RD) * cSize
-        const y = sin(rad * RD) * cSize
+        // text values
+        const textStart = 210
+        const textIncrement = 60
+        const textGroupRadius = 60
+        const textDeg = textStart + i * textIncrement
+        const tX = cos(textDeg * RD) * textGroupRadius
+        const tY = sin(textDeg * RD) * textGroupRadius
 
         return (
           <>
@@ -40,10 +39,15 @@ const W = () => {
                 ...wedge, fill: e.fill,
                 transform: `rotate(${240 + i * 60}deg)`
               }}
+              onClick={(e: any) => {
+                // erases previous transform !!!
+                e.target.style.transform = 'scale(1.2)'
+                console.log('t', this, e.target)
+              }}
             />
             <text
               dominant-baseline="middle" text-anchor="middle"
-              x={x} y={y} style={{ fill: 'black' }}>
+              x={tX} y={tY} style={{ fill: 'black' }}>
               {e.label}
             </text>
           </>)
