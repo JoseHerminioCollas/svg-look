@@ -1,6 +1,18 @@
   body {
     margin: 0;
   }
+  #abc {
+    background-color: red;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  #abc div {
+    margin: 12px;
+    background-color: white;
+    padding: 12px;
+    transition:  transform 1s ;
+  }
   @keyframes fadeIn {
     from {
         transform: scale(1.5);

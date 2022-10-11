@@ -9,7 +9,7 @@ const wedgeRadius = 90
 const wX = cos(wedgeCornerDeg * RD) * wedgeRadius
 const wY = sin(wedgeCornerDeg * RD) * wedgeRadius
 
-const W = () => {
+const W = ({ onClick }: any) => {
   const [s, setS] = React.useState(1)
   const [s1, setS1] = React.useState(1)
   const [s2, setS2] = React.useState(1)
@@ -46,6 +46,7 @@ const W = () => {
               }}
               data-id={i}
               onClick={({ target }: any) => {
+                onClick(target.dataset.id)
                 action(target.dataset.id)
               }}
             />

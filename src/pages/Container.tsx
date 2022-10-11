@@ -16,49 +16,68 @@ const bg = {
 }
 
 const Container = () => {
+  const [e0, setE0] = React.useState(1)
+  const [e1, setE1] = React.useState(1)
+  const [e2, setE2] = React.useState(1)
+  const els: any = [
+    [e0, setE0],
+    [e1, setE1],
+    [e2, setE2]
+  ]
+  const wAction = (id: any) => {
+    els.forEach((e: any) => (e[1](1)))
+    els[id][1](2)
+  }
 
   return (
-    <div style={container}>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200"
-        style={{ overflow: 'visible' }}
-      >
-        <rect style={{ ...bg }} />
-        <g style={{
-          transform: 'translate( 50%, 85%)',
-          fill: 'none'
-        }}>
-          <A
-            text="abc"
-            radius={100}
-            color="gray"
-            textColor="blue"
-            idName="a"
-            startOffset=""
-          />
-          <A
-            text="def"
-            radius={130}
-            color="blue"
-            textColor="red"
-            idName="b"
-            startOffset=""
-          />
-          <C
-            data={[{ text: 'A' }]}
-            groupRadius={100} />
-          <C
-            data={[
-              { text: 'A' },
-              { text: 'B' },
-              { text: 'C' },
-              { text: 'D' },
-            ]}
-            groupRadius={150} />
-          <W />
-        </g>
-        <circle fill="blue" cx="50%" cy="85%" r="40" opacity="1" id="c" />
-      </svg>
-    </div>
+    <>
+      <div style={container}>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200"
+          style={{ overflow: 'visible' }}
+        >
+          <rect style={{ ...bg }} />
+          <g style={{
+            transform: 'translate( 50%, 85%)',
+            fill: 'none'
+          }}>
+            <A
+              text="abc"
+              radius={100}
+              color="gray"
+              textColor="blue"
+              idName="a"
+              startOffset=""
+            />
+            <A
+              text="def"
+              radius={130}
+              color="blue"
+              textColor="red"
+              idName="b"
+              startOffset=""
+            />
+            <C
+              data={[{ text: 'A' }]}
+              groupRadius={100} />
+            <C
+              data={[
+                { text: 'A' },
+                { text: 'B' },
+                { text: 'C' },
+                { text: 'D' },
+              ]}
+              groupRadius={150} />
+            <W onClick={wAction} />
+          </g>
+          <circle fill="blue" cx="50%" cy="85%" r="40" opacity="1" id="c" />
+        </svg>
+      </div>
+      <div id="abc">
+        <div style={{ transform: `scale(${e0})` }}>A</div>
+        <div style={{ transform: `scale(${e1})` }}>B</div>
+        <div style={{ transform: `scale(${e2})` }}>C</div>
+      </div>
+    </>
   )
 }
 
