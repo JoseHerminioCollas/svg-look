@@ -17,6 +17,9 @@
     animation-fill-mode: forwards;
 
   }
+  svg path, text {
+    cursor: pointer;
+  }
   svg #c{
     transform-origin: center center;
     background-color: gainsboro;
