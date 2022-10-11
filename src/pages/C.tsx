@@ -5,12 +5,12 @@ const { cos, sin } = Math
 
 const C = ({
   data = [],
-  groupRadius = 130,
+  groupRadius = 100,
   circleCount = 10,
-  diskRadius = 15,
+  diskRadius = 20,
   placementInc = 20,
-  circleStart = 180,
-} : any) => {
+  circleStart = 190,
+}: any) => {
 
   return (<>
     {data.map((v, i) => {
@@ -27,8 +27,24 @@ const C = ({
             x={x} y={y}
             style={{ fill: 'black', fontSize: '0.5em' }}
           >
-            <tspan x={x} dy="-1em">{v.text}</tspan>
-            <tspan x={x} dy="1.2em">B ddd ddd</tspan>
+            {v.text.length === 1 &&
+              <>
+                <tspan x={x} dy="0">{v.text}</tspan>
+              </>
+            }
+            {v.text.length === 2 &&
+              <>
+                <tspan x={x} dy="-1em">{v.text[0]}</tspan>
+                <tspan x={x} dy="1.2em">{v.text[1]}</tspan>
+              </>
+            }
+            {v.text.length === 3 &&
+              <>
+                <tspan x={x} dy="-1em">{v.text[0]}</tspan>
+                <tspan x={x} dy="1.2em">{v.text[1]}</tspan>
+                <tspan x={x} dy="1.2em">{v.text[2]}</tspan>
+              </>
+            }
           </text>
         </>
       )

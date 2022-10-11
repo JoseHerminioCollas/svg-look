@@ -61,12 +61,12 @@ const Container = () => {
               groupRadius={100} />
             <C
               data={[
-                { text: 'A' },
-                { text: 'B' },
-                { text: 'C' },
-                { text: 'D' },
+                { text: ['A', 'B'] },
+                { text: ['B', 'xxxx', 'aaaa'] },
+                { text: ['C'] },
+                { text: ['D'] },
               ]}
-              groupRadius={150} />
+              groupRadius={120} />
             <W onClick={wAction} />
           </g>
           <circle fill="blue" cx="50%" cy="85%" r="40" opacity="1" id="c" />

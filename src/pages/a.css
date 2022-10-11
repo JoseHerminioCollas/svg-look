@@ -1,6 +1,9 @@
   body {
     margin: 0;
   }
+  path {
+    transition: transform 1s ease 0s;
+  }
   #abc {
     background-color: red;
     display: flex;
