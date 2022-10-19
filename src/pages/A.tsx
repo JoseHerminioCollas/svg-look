@@ -4,8 +4,20 @@ const arc = {
   fill: "none", strokeWidth: "40",
 }
 
-const A = ({ text, radius, color, textColor, idName, startOffset = '25%' }: any) => (
-  <>
+const A = ({ 
+  text, 
+  radius, 
+  color, 
+  textColor, 
+  idName, 
+  startOffset = '25%',
+  onMouseAEnter,
+  onMouseALeave,
+}: any) => (
+  <g
+   onMouseEnter={onMouseAEnter}
+  onMouseLeave={onMouseALeave}
+  >
     <path id={`${idName}`} d={`M -${radius} 0
       A ${radius} ${radius} 0 0 1 ${radius}  01` }
       stroke={color}
@@ -15,7 +27,7 @@ const A = ({ text, radius, color, textColor, idName, startOffset = '25%' }: any)
         {text}
       </textPath>
     </text>
-  </>
+  </g>
 )
 
 export default A
